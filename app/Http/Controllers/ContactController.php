@@ -39,7 +39,7 @@ class ContactController extends Controller
 
         $this->validate(request(), [
             'que' => 'required|min:2|max:75',
-            'cuando' => 'required',
+            'cuando' => 'required|date',
             'donde' => 'required',
             'nombre'  => 'required',
             'telefono' => 'required|numeric',
