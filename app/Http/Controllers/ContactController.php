@@ -28,18 +28,12 @@ class ContactController extends Controller
     
     public function store(Request $request)
     {
-
+        $input = $request->all();
         
-        $que= $request->input('que');
-        $cuando= $request->input('cuando');
-        $donde= $request->input('donde');
-        $nombre= $request->input('nombre');
-        $telefono= $request->input('telefono');
-        $correo= $request->input('correo');
-
         $this->validate(request(), [
             'que' => 'required|min:2|max:75',
-            'cuando' => 'required|date',
+            'cuando' => 'required',
+            'cuando2' => 'required',
             'donde' => 'required',
             'nombre'  => 'required',
             'telefono' => 'required|numeric',
@@ -48,9 +42,8 @@ class ContactController extends Controller
 
 
         $destino=(env('MAIL_FROM_ADDRESS'));
-
-         Mail::to($destino)->send(new Contactmail($que,$cuando,$donde,$nombre,$telefono,$correo));
-
+        Mail::to($destino)->send(new Contactmail($input));
+        
     }
 
     
