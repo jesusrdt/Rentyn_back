@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProductsTable extends Migration
+class CreateProductPivotCategoryTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,15 @@ class CreateProductsTable extends Migration
      */
     public function up()
     {
-        Schema::create('products', function (Blueprint $table) {
+		Schema::create('product_pivot_category', function (Blueprint $table) {
             $table->increments('id');
-			$table->string('title', 50)->nullable();
-			$table->string('characteristic', 254)->nullable();
-			$table->longText('description', 254);
-			$table->string('imagen')->nullable();
+			$table->integer("product_id")->unsigned();
+			$table->integer("category_id")->unsigned();
 			$table->char("status", 1);
             $table->timestamps();
+			
+			$table->foreign("product_id")->references("id")->on("products")->onDelete('cascade');
+			$table->foreign("category_id")->references("id")->on("categories")->onDelete('cascade');
         });
     }
 
@@ -31,6 +32,6 @@ class CreateProductsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('products');
+        Schema::dropIfExists('product_pivot_category');
     }
 }
