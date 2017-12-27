@@ -2,7 +2,7 @@
 
 
 namespace App\Http\Controllers;
-use App\Contact;
+
 use Illuminate\Http\Request;
 use Exception;
 use Session;
