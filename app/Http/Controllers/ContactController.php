@@ -8,6 +8,7 @@ use Exception;
 use Session;
 use Validator;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Redirect;
 use App\Mail\Contactmail;
 
 class ContactController extends Controller
@@ -43,7 +44,7 @@ class ContactController extends Controller
 
         $destino=(env('MAIL_FROM_ADDRESS'));
         Mail::to($destino)->send(new Contactmail($input));
-        
+        return Redirect::to('/')->with('message', 'Gracias');
     }
 
     
