@@ -15,7 +15,7 @@ class CreateProductOrdensTable extends Migration
     {
         Schema::create('product_ordens', function (Blueprint $table) {
             $table->increments('id');
-			$table->integer("product_id")->unsigned();
+			$table->integer("product_provider_id")->unsigned();
 			$table->integer("product_bill_id")->unsigned();
 			$table->float("value");
 			$table->float("value_extra");
@@ -26,7 +26,7 @@ class CreateProductOrdensTable extends Migration
 			$table->char("status", 1);
             $table->timestamps();
 			
-			$table->foreign("product_id")->references("id")->on("products")->onDelete('cascade');
+			$table->foreign("product_provider_id")->references("id")->on("product_providers")->onDelete('cascade');
 			$table->foreign("product_bill_id")->references("id")->on("product_bills")->onDelete('cascade');
         });
     }
