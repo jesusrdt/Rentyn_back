@@ -11,6 +11,7 @@ class Contactmail extends Mailable
 {
     use Queueable, SerializesModels;
 
+<<<<<<< HEAD
     public $que,$cuando,$cuando2,$donde,$correo, $nombre, $telefono;
     public function __construct($input)
     {
@@ -27,14 +28,35 @@ class Contactmail extends Mailable
       }
         
         
+=======
+  
+
+  public $que,$cuando,$donde,$correo, $nombre, $telefono;
+    public function __construct($que,$cuando,$donde,$nombre, $telefono, $correo
+  )
+    {
+        $this->que=$que;
+        $this->cuando=$cuando;
+        $this->donde=$donde;
+        $this->nombre=$nombre;
+        $this->telefono=$telefono;
+        $this->correo=$correo;
+>>>>>>> PedroLeal
     }
 
   
     public function build()
     {
         $de=(env('MAIL_FROM_ADDRESS'));
+<<<<<<< HEAD
         return $this->view('v1.contact.enviomail')
             ->from($de)
             ->subject('Solicitud ');
+=======
+        //->with('que',$this->que, 'cuando',$this->cuando)
+        return $this->view('v1.contact.enviomail')
+            ->from($de)
+            ->subject('prueba correo');
+>>>>>>> PedroLeal
     }
 }
