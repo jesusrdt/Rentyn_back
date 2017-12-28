@@ -76,7 +76,7 @@
  
    							 <!-- Asociamos al input la datalist 'listas' -->
    
-      						<input id="search" class="form-control" list="listas" placeholder="Buscar" name="srch-term" id="srch-term" type="text">
+      						<input id="dir" class="form-control" list="listas" placeholder="Buscar" name="srch-term" id="srch-term" type="text">
       						
       					</div>
       							

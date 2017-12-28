@@ -68,7 +68,7 @@
         				<div class="input-group-addon">
          				<i class="fa fa-calendar"></i>
         				</div>
-        				<input class="form-control" id="rangeA" name="date" placeholder="MM/DD/YYYY" type="text"/>
+        				<input class="form-control" id="rangeA" name="date" placeholder="MM/DD/YYYY" type="date"/>
        				</div>
        			</div>	
       	</div>	

@@ -85,21 +85,21 @@ label{
                  <div class="form-row">
                         <label>
                             <span>Nombre</span><br>
-                            <input type="text" name="name" required="">
+                            <input type="text" id="txtName" name="name" required="">
                         </label>
                   </div>
 
                   <div class="form-row">
                         <label>
                             <span>Teléfono</span><br>
-                            <input type="tel" name="telefono" required="">
+                            <input type="tel" id="txtTlf" name="telefono" required="">
                         </label>
                   </div>
 
                   <div class="form-row">
                         <label>
                             <span>Email</span><br>
-                            <input type="email" name="email" required="">
+                            <input type="email" id="txtEmail" name="email" required="">
                         </label>
                   </div>
               </form>
