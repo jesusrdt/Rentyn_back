@@ -4,8 +4,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Exception;
-use Session;
 use Validator;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
@@ -16,8 +14,6 @@ class ContactController extends Controller
     public function index()
     {
 
-
-       return View('v1.contact.contactform');
     }
 
     
