@@ -17,13 +17,13 @@ class Contactmail extends Mailable
     {
 
         foreach ($input as $key => $value) {
-                $this->que = $input['que'];
-                $this->cuando = $input['cuando'];
-                $this->cuando2 = $input['cuando2'];
-                $this->donde = $input['donde'];
-                $this->nombre = $input['nombre'];
-                $this->telefono = $input['telefono'];
-                $this->correo = $input['correo'];      
+                $this->que = $input['search'];
+                $this->cuando = $input['rangeA'];
+                $this->cuando2 = $input['rangeB'];
+                $this->donde = $input['dir'];
+                $this->nombre = $input['txtName'];
+                $this->telefono = $input['txtTlf'];
+                $this->correo = $input['txtEmail'];     
 
       }
         
