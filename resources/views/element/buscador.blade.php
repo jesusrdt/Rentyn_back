@@ -9,8 +9,14 @@
 
 <script src="https://maps.googleapis.com/maps/api/js?key={{env('MAPS_GOOGLEAPIS_KEY')}}&libraries=places"></script>
 <script type="text/javascript">
+
+
+
  var input = document.getElementById('SearchPlaces');
-   var autocomplete = new google.maps.places.Autocomplete(input);
+  var options = {
+  componentRestrictions: {country: "es"}
+ };
+   var autocomplete = new google.maps.places.Autocomplete(input,options);
        google.maps.event.addListener(autocomplete, 'place_changed',   function () {
       var place = autocomplete.getPlace();
       var lat = place.geometry.location.lat();
