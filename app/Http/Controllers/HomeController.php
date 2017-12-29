@@ -23,6 +23,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('elements/homeForm');
+        return view('landing');
     }
 }
