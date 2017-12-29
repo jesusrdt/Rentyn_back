@@ -31,6 +31,7 @@
                         <li class="nav-item"><a href="{{ route('login') }}" class="nav-link">@lang('layouts.login')</a></li>
                         <li class="nav-item"><a href="{{ route('register') }}" class="nav-link">@lang('layouts.register')</a></li>
                     @else
+						<li class="nav-item"><a href="./categories" class="nav-link">@lang('layouts.category')</a></li>
                         <li class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
                                aria-haspopup="true" aria-expanded="false">

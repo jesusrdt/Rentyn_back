@@ -2,5 +2,6 @@
 
 return [
 	'login' => 'Iniciar sesión',
-	'register' => 'Registrar'
+	'register' => 'Registrar',
+	'category' => 'Categoria',
 ];
