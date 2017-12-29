@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+<!-- @extends('element.buscador') -->
+
 @section('content')
 <div class="container">
     <div class="row mt-5">
