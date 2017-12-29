@@ -12,8 +12,9 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 
+    <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" >  
     <!-- Custom fonts for this template -->
     <link href="{{ asset('vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
@@ -25,7 +26,7 @@
 
     <!-- Custom styles for this template -->
     <link href="{{asset('css/landing.css')}}" rel="stylesheet">
-  
+ 
 
   <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/themes/redmond/jquery-ui.css" type="text/css" />
   <link rel="stylesheet" href="{{asset('css/ui.daterangepicker.css')}}" type="text/css" />
@@ -88,7 +89,7 @@
               <h5 class="mb-3">Qué</h5>
                   <div class="input-group">
                     <span class="input-group-btn">
-                  <button type="submit" class="btn btn-default" data-original-title="" title=""><i class="glyphicon glyphicon-search"></i></button>
+                  <button type="submit" class="btn btn-default" data-original-title="" title=""><i class="fa fa-search"></i></button>
                 </span>
                 <input class="form-control" id="system-search" name="q" placeholder="Search for" required="">
                 
@@ -103,7 +104,7 @@
               <h5 class="mb-3">Dónde</h5>
                <div class="input-group">
                     <span class="input-group-btn">
-                  <button type="submit" class="btn btn-default" ><i class="glyphicon glyphicon-search"></i></button>
+                  <button type="submit" class="btn btn-default" ><i class="fa fa-search"></i></button>
                 </span>
                 <input class="form-control" id="system-search2" name="q" placeholder="Search for" required="">
                 
@@ -116,9 +117,11 @@
               <h5 class="mb-3">Cuándo</h5>
               <div class="input-group">
                     <span class="input-group-btn">
-                  <button type="submit" class="btn btn-default" data-original-title="" title=""><i class="glyphicon glyphicon-search"></i></button>
+                  <button type="submit" class="btn btn-default" data-original-title="" title=""><i class="fa fa-search"></i></button>
                 </span>
-                <input class="form-control" id="rangeA" type="date" placeholder="Search for" required="">
+                 <input id="reportrange" type="date">
+                  
+                </input>
                 
               </div>
             </div>
@@ -184,17 +187,9 @@
   <!-- ================================================================ -->
 
 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/jquery-ui.min.js"></script>
-  <script src="{{ asset('js/date.js') }}"></script>
+
   <script src="{{ asset('js/daterangepicker.jQuery.js') }}"></script>
   
-  <script type="text/javascript">
-      $(function(){
-          $('#rangeA').daterangepicker();
-          
-       });
-  </script>
 
 <script src="{{ asset('js/bootstrap.min.js') }}"></script>
 
