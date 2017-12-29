@@ -26,3 +26,6 @@ Route::get('lang/{lang}', function($lang) {
 })->middleware('web')->name('change_lang');
 
 
+/**** TAGS  ******/
+Route::resource('/tags', 'TagController');
+

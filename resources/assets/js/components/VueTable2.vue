@@ -1,27 +1,33 @@
 <template>
-  <div>
-    <filter-bar></filter-bar>
-    <vuetable ref="vuetable"
-      api-url="http://vuetable.ratiw.net/api/users"
-      :fields="fields"
-      pagination-path=""
-      :css="css.table"
-      :sort-order="sortOrder"
-      :multi-sort="true"
-      detail-row-component="my-detail-row"
-      :append-params="moreParams"
-      @vuetable:cell-clicked="onCellClicked"
-      @vuetable:pagination-data="onPaginationData"
-    ></vuetable>
-    <div class="vuetable-pagination">
-      <vuetable-pagination-info ref="paginationInfo"
-        info-class="pagination-info"
-      ></vuetable-pagination-info>
-      <vuetable-pagination ref="pagination"
-        :css="css.pagination"
-        @vuetable-pagination:change-page="onChangePage"
-      ></vuetable-pagination>
-    </div>
+  <div class="vtable">
+      <filter-bar></filter-bar>
+      <vuetable ref="vuetable"
+          api-url="http://vuetable.ratiw.net/api/users"
+          :fields="fields"
+          pagination-path=""
+          :css="css.table"
+          :sort-order="sortOrder"
+          :multi-sort="true"
+          detail-row-component="my-detail-row"
+          :append-params="moreParams"
+          @vuetable:cell-clicked="onCellClicked"
+          @vuetable:pagination-data="onPaginationData"
+      ></vuetable>
+      <div class="vuetable-pagination">
+        <div class="row">
+          <div class="col-md-6">
+            <vuetable-pagination-info ref="paginationInfo"
+              info-class="pagination-info"
+            ></vuetable-pagination-info>
+          </div>
+          <div class="col-md-6">
+            <vuetable-pagination ref="pagination"
+              :css="css.pagination"
+              @vuetable-pagination:change-page="onChangePage"
+            ></vuetable-pagination>
+          </div>
+        </div>
+      </div>
   </div>
 </template>
 
@@ -103,7 +109,7 @@ export default {
       ],
       css: {
         table: {
-          tableClass: 'table table-bordered table-striped table-hover',
+          tableClass: 'table table-paper table-condensed table-bordered',
           ascendingIcon: 'glyphicon glyphicon-chevron-up',
           descendingIcon: 'glyphicon glyphicon-chevron-down'
         },
@@ -111,13 +117,13 @@ export default {
           wrapperClass: 'pagination',
           activeClass: 'active',
           disabledClass: 'disabled',
-          pageClass: 'page',
+          pageClass: 'page-link',
           linkClass: 'link',
           icons: {
-            first: '',
-            prev: '',
-            next: '',
-            last: '',
+            first: 'glyphicon glyphicon-step-backward',
+            prev: 'glyphicon glyphicon-chevron-left',
+            next: 'glyphicon glyphicon-chevron-right',
+            last: 'glyphicon glyphicon-step-forward',
           },
         },
         icons: {
@@ -177,39 +183,66 @@ export default {
 }
 </script>
 <style>
-.pagination {
-  margin: 0;
-  float: right;
-}
-.pagination a.page {
-  border: 1px solid lightgray;
-  border-radius: 3px;
-  padding: 5px 10px;
-  margin-right: 2px;
-}
-.pagination a.page.active {
-  color: white;
-  background-color: #337ab7;
-  border: 1px solid lightgray;
-  border-radius: 3px;
-  padding: 5px 10px;
-  margin-right: 2px;
-}
-.pagination a.btn-nav {
-  border: 1px solid lightgray;
-  border-radius: 3px;
-  padding: 5px 7px;
-  margin-right: 2px;
-}
-.pagination a.btn-nav.disabled {
-  color: lightgray;
-  border: 1px solid lightgray;
-  border-radius: 3px;
-  padding: 5px 7px;
-  margin-right: 2px;
-  cursor: not-allowed;
-}
-.pagination-info {
-  float: left;
-}
+    .vtable {
+        padding-bottom: 20px;
+    }
+
+    .pagination {
+        margin: 0;
+        float: right;
+    }
+
+    .pagination a {
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .pagination a.page-link {
+        border: 1px solid lightgray;
+        border-radius: 3px;
+        padding: 5px 10px;
+        margin-right: 2px;
+    }
+
+    .pagination a.page-link.active {
+        color: white;
+        background-color: #337ab7;
+        border: 1px solid lightgray;
+        border-radius: 3px;
+        padding: 5px 10px;
+        margin-right: 2px;
+    }
+
+    .pagination a.btn-nav {
+        border: 1px solid lightgray;
+        border-radius: 3px;
+        padding: 5px 7px;
+        margin-right: 2px;
+    }
+
+    .pagination a.btn-nav.disabled {
+        color: lightgray;
+        border: 1px solid lightgray;
+        border-radius: 3px;
+        padding: 5px 7px;
+        margin-right: 2px;
+        cursor: not-allowed;
+    }
+
+    .pagination-info {
+        float: left;
+    }
+    th.sortable:hover{
+        text-decoration: none !important;
+    }
+
+    .custon-action-width {
+        width: 200px;
+    }
+
+    .vuetable-checkboxes
+    {
+        text-align: center;
+        width: 40px;
+    }
 </style>
