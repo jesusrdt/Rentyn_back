@@ -15,7 +15,7 @@
 	<!--end navbar-->
 	@yield('content')
 	<!--footer-->
-	@include('footer')
+	@include('footer')kfkfkfkf
 	<!-- end footer-->
 </body>
 </html>
