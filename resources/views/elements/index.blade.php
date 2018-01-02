@@ -1,13 +1,13 @@
 @extends('elements.head')
-@extends('elements.header')
 
-    <body>
-        <!-- Start Page Loading -->
-        <section class="pagina-home slider" style="background-image:url('https://www.rentyn.com/uploads/sizes/slide_home/Slides/img_principal.jpg')">
+
+  @section('content')
+        
+        <section class="pagina-home slider" style="background-image:url('{{ asset('img/img_principal.jpg') }}')">
     <div class="texto-slider">
         <p><span style="color: #ffffff;">&iexcl;Alquile la </span><span style="color: #ffa514;">Maquinaria</span><span style="color: #ffffff;"> que <span style="color: #ffa514;">necesita</span>!</span></p>   </div>
     <div class="buscador-slider">
-        <form method="POST" action="https://www.rentyn.com/es/maquinaria" target="_blank">
+        <form method="POST" action="#" target="_blank">
         <div class="buscador-items campos">
             <input name="busqueda" class="slider-inputs left-radius" placeholder="¿Qué necesita alquilar?" type="text">
         </div>
@@ -729,7 +729,5 @@
         </div>
     </div>
 </section>  
-        <!-- End Page Loading -->
 
-        <!-- //////////////////////////////////////////////////////////////////////////// -->
-      
+ @endsection     
