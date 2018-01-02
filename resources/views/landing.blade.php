@@ -78,70 +78,51 @@
       </div>
     </header>
 
-
+ 
     
-    <div class="form1">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="service-box mt-5 mx-auto">
-             
-              <h5 class="mb-3">Qué</h5>
-                  <div class="input-group">
-                    <span class="input-group-btn">
-                  <button type="submit" class="btn btn-default" data-original-title="" title=""><i class="fa fa-search"></i></button>
-                </span>
-                <input class="form-control" id="system-search" name="q" placeholder="Search for" required="">
-                
-              </div>
-            </div>
-
-
-          </div>
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="service-box mt-5 mx-auto">
-        
-              <h5 class="mb-3">Dónde</h5>
-               <div class="input-group">
-                    <span class="input-group-btn">
-                  <button type="submit" class="btn btn-default" ><i class="fa fa-search"></i></button>
-                </span>
-                <input class="form-control" id="system-search2" name="q" placeholder="Search for" required="">
-                
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="service-box mt-5 mx-auto">
-             
-              <h5 class="mb-3">Cuándo</h5>
-              <div class="input-group">
-                    <span class="input-group-btn">
-                  <button type="submit" class="btn btn-default" data-original-title="" title=""><i class="fa fa-search"></i></button>
-                </span>
-                 <input id="reportrange" type="date">
-                  
-                </input>
-                
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="service-box mt-5 mx-auto">
-             
-              <h5 class="mb-3">&nbsp;</h5>
-                <div class="input-group">
-                  <input  id="search" type="submit" value="Buscar" placeholder="Buscar">
-                  </div>
-            </div>
-          </div>
+  <form class="form1">
+  	
+    <div class="container">
+	<div class="row">
+		<div class="col-lg-3 col-md-6 col-sm text-center"><h5 class="mb-3">Qué</h5>
+			<div class="col-xs-4" > 
+ 		 		 <div class="input-group" >
+    <span class="input-group-addon" width="50px"><i class="fa fa-search"></i></span>
+    <input class="form-control"   name="q" placeholder="Search for" required="">
+  </div>
         </div>
-      </div>
-   </div>
+		</div>
 
-   </section>
+  		<div class="col-lg-3 col-md-6 col-sm text-center"><h5 class="mb-3">Dónde</h5>
+			<div class="col-xs-4"> 
+ 		 		 <div class="input-group" >
+    <span class="input-group-addon"><i class="fa fa-search"></i></span>
+    <input class="form-control"  name="q" placeholder="Search for" required="">
+  </div>
+        </div>
 
-  
+  		</div>
+  		<div class="col-lg-3 col-md-6 col-sm text-center"><h5 class="mb-3">Cuándo</h5>
+			<div class="col-xs-4"> 
+ 		 		 <div class="input-group" >
+    <span class="input-group-addon"><i class="fa fa-search"></i></span>
+    <input class="form-control"  name="q" type="date" required="">
+  </div>
+        </div>
+  		</div>
+  		<div class="col-lg-3 col-md-6 col-sm text-center"><h5 class="mb-3">&nbsp;</h5>
+  		 <div class="col-lg-3 col-md-6 col-sm text-center">
+  			<div class="input-group">
+                  <input id="search" type="submit" value="Siguiente">
+        </div>
+     </div>	
+   </div>	
+</div>
+</div>
+    </form>
+   <!-- ============================================================ -->
+
+
    <div class="form1">
       <div class="container">
         <div class="row">
@@ -175,12 +156,16 @@
               </form>
            
           </div>  
-          <div class="col-md-3" >
-           <input id="enviar" type="submit" value="Enviar">
-          </div>
+         
        </div>
     </div>
-  </div>  
+  </div> 
+  <div class="row">
+          <div class="col-lg-3 col-md-6 text-center">
+   <div class="col-lg-3 col-md-6 text-center" >
+           <input id="enviar" type="submit" value="Enviar">
+    </div> 
+</div></div>
   </div>
 
 
