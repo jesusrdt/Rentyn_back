@@ -17,12 +17,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/product/store',  'ProductController@store');
-Route::post('/product/update/{id}' , 'ProductController@update');
-Route::get('/product/destroy/{id}',[
+Route::post('/admin/reference-products/store',  'ProductController@store');
+Route::post('/admin/reference-products/update/{id}' , 'ProductController@update');
+Route::get('/admin/reference-products/destroy/{id}',[
 	'uses' =>'ProductController@destroy',
 	'as'   =>'product.destroy'
 	]);
-
 
 Route::post('/v1/contact/form', 'ContactController@store');
