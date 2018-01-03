@@ -19,7 +19,7 @@ class ProductController extends Controller
         $products =Product::Busqueda($request->get('busq'))
         ->paginate(10);
  
-        return View('product.index',compact('products'));
+        return View('product.reference-products',compact('products'));
         
 
     }
@@ -27,7 +27,7 @@ class ProductController extends Controller
     
     public function create()
     {
-        return View('product.registro');
+        
     }
 
     
@@ -36,7 +36,7 @@ class ProductController extends Controller
             $this->validate(request(), [
             'title' => 'required|min:2|max:50',
             'characteristic' => 'required|max:254',
-            'imagen'  => 'mimes:jpeg,bmp,png',
+            'imagen'  => 'mimes:jpeg,png',
             'status' => 'required'
             ]);
 
@@ -53,17 +53,22 @@ class ProductController extends Controller
 
         $product = new Product;
         $product->fill($input);
+        $product->imagen='...';
+        $product->save();
+
+        $producti=Product::findOrFail($product->id);
         if (Input::hasFile('imagen')){
             $file=Input::file('imagen');
-            $file->move(public_path().'/imagenes/products',$file->getClientOriginalName());
-        $product->imagen=$file->getClientOriginalName();
+            $idm=$product->id.'-pf.'.$file->getClientOriginalExtension();    
+            $file->move(storage_path().'/app/public/prod-reference',$idm);
+        $producti->imagen=$idm;
         }
-        $product->save();
+        $producti->update();
 
         
         }catch (Exception $e){
        
-        return redirect()->back()->withInput()->withErrors($e);
+        return ('Error');
 
         }
         return ('Add Success!!!');
@@ -80,29 +85,29 @@ class ProductController extends Controller
     public function edit($id)
     {
         $product =Product::findOrFail($id);
-        return View('product.edit',compact('product'));
-
+        
     }
 
     
     public function update(Request $request, $id)
     {
-        $this->valida(); //$file->getClientOriginalName()
+        $this->valida(); 
         try {
         $input   = $request->all();
         $product =Product::findOrFail($id);
         $product->fill($input);
         if (Input::hasFile('imagen')){
-           $file=Input::file('imagen');
-           $file->move(public_path().'/imagenes/products',$file->getClientOriginalName());
-            $product->imagen=$file->getClientOriginalName();
+            $file=Input::file('imagen');
+            $idm=$product->id.'-pf.'.$file->getClientOriginalExtension();    
+            $file->move(storage_path().'/app/public/prod-reference',$idm);
+        $producti->imagen=$idm;
         }
         $product->update();
         }catch (Exception $e){
         
-        return redirect()->back()->withInput()->withErrors($e);
+        return ('Error');
     }
-        return ('Update  Success!!!');
+        return ('Update Success!!!');
 
     }
 
@@ -111,6 +116,6 @@ class ProductController extends Controller
     {
         $product =Product::findOrFail($id);
         $product->delete();
-        return ('Delete  Success!!!');                   
+        return ('Delete Success!!!');                   
     }
 }
