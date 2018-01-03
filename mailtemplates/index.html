@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
 	<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 	<meta charset="UTF-8">
@@ -19,9 +20,67 @@
 	.header .logo-header{
 	margin: 0 auto;
 	position: absolute;
-	left:30%;
+	margin:0 auto;
 	top: -35px;
+	left: 25%
 	}
+	
+	@media (min-width:320px)  {
+	 /* smartphones, iPhone, portrait 480x320 phones */ 
+	.header .logo-header{
+	margin: 0 auto;
+	position: absolute;
+	margin:0 auto;
+	top: -35px;
+	left: 25%;
+	}
+	}
+	@media (min-width:481px)  { 
+	/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+	 .header .logo-header{
+	margin: 0 auto;
+	position: absolute;
+	margin:0 auto;
+	top: -35px;
+	left: 35%;
+	}
+	 }
+	@media (min-width:641px)  { 
+	/* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+	.header .logo-header{
+	margin: 0 auto;
+	position: absolute;
+	margin:0 auto;
+	top: -35px;
+	left: 40%;
+	}
+	 }
+	@media (min-width:961px)  { 
+	/* tablet, landscape iPad, lo-res laptops ands desktops */
+	.header .logo-header{
+	margin: 0 auto;
+	position: absolute;
+	margin:0 auto;
+	top: -35px;
+	left: 15%;
+	}
+	 }
+	@media (min-width:1025px) { 
+	/* big landscape tablets, laptops, and desktops */
+	 .header .logo-header{
+	margin: 0 auto;
+	position: absolute;
+	margin:0 auto;
+	top: -35px;
+	left: 45%;
+	}
+	}
+	@media (min-width:1281px) { 
+	/* hi-res laptops and desktops */ 
+	
+	}
+	
+	
 	.header{
 	width: 100%;
 	background-color:#eee;
@@ -30,11 +89,9 @@
 	}
 	.logo{
 	z-index: 999;
-	position: absolute;
 	}
 	.form-layouts .header .logo{
-	width: 100%;
-	margin:0 auto;
+	
 	}
 	.form-layouts{
 	background:#fff;
