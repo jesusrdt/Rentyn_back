@@ -11,6 +11,7 @@
 |
 */
 
+use App\Mail\LandingMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -25,7 +26,7 @@ Route::post('/send/form/landing', function(Request $request) {
         'where' => 'required',
         'when'  => 'required',
         'name'  => 'required',
-        'phone' => 'required',
+        'phone' => 'required|max:9',
         'email' => 'required|email',
     ]);
 
@@ -34,6 +35,12 @@ Route::post('/send/form/landing', function(Request $request) {
                     ->withErrors($validator)
                     ->withInput();
     }
+
+    Mail::to('info@rentyn.com')->send(new LandingMail($request->all()));
+        
+    notify()->flash('Solicitud enviada', 'success', [
+        'text' => 'En pocos minutos, sera contactado para darle solución para su solicitud',
+    ]);
 
     return redirect('/');
 });

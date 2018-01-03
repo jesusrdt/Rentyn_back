@@ -19,7 +19,7 @@
             {{ csrf_field() }}
             <div class="form-group {{$errors->has('what')?'is-invalid':''}}">
                 <label for="what">¿Que necesitas?</label>
-                <input name="what" type="text" class="form-control" id="what" placeholder="">
+                <input name="what" type="text" value="{{old('what')}}" class="form-control" id="what" placeholder="">
                 @if($errors->has('what'))
                 <div class="invalid-feeback">
                     {{$errors->first('what')}}
@@ -29,7 +29,7 @@
           
             <div class="form-group {{$errors->has('where')?'is-invalid':''}}">
               <label for="where">¿Donde estas?</label>
-              <input name="where" type="text" class="form-control" id="where" placeholder="">
+              <input name="where" type="text" value="{{old('where')}}" class="form-control" id="where" placeholder="">
               @if($errors->has('where'))
                 <div class="invalid-feeback">
                     {{$errors->first('where')}}
@@ -39,7 +39,7 @@
           
             <div class="form-group {{$errors->has('when')?'is-invalid':''}}">
               <label for="when">¿Cuando lo necesitas?</label>
-              <input name="when" type="text" class="form-control" id="when" placeholder="">
+              <input name="when" type="text" value="{{old('when')}}" class="form-control" id="when" placeholder="">
               @if($errors->has('when'))
                 <div class="invalid-feeback">
                     {{$errors->first('when')}}
@@ -48,7 +48,7 @@
             </div>
             <div class="form-group {{$errors->has('name')?'is-invalid':''}}">
                <label for="name">Tu nombre</label>
-              <input name="name" type="text" class="form-control" id="name" placeholder="">
+              <input name="name" type="text" value="{{old('name')}}" class="form-control" id="name" placeholder="">
               @if($errors->has('name'))
                 <div class="invalid-feeback">
                     {{$errors->first('name')}}
@@ -58,7 +58,7 @@
         
             <div class="form-group {{$errors->has('phone')?'is-invalid':''}} ">
               <label for="phone">Tu teléfono</label>
-              <input name="phone" type="text" class="form-control" id="phone" placeholder="">
+              <input name="phone" type="text" value="{{old('phone')}}" class="form-control" id="phone" placeholder="">
               @if($errors->has('phone'))
                 <div class="invalid-feeback">
                     {{$errors->first('phone')}}
@@ -68,7 +68,7 @@
         
             <div class="form-group {{$errors->has('email')?'is-invalid':''}}">
               <label for="email">Tu email</label>
-              <input name="email" type="text" class="form-control" id="email" placeholder="">
+              <input name="email" type="text" value="{{old('email')}}" class="form-control" id="email" placeholder="">
               @if($errors->has('email'))
                 <div class="invalid-feeback">
                   {{$errors->first('email')}}
@@ -76,45 +76,6 @@
               @endif
             </div>
 
-            <!--
-            <div class="form-row">
-
-              <div class="form-group col-md-4">
-                <label for="what">¿Que necesitas?</label>
-                <input name="what" type="text" class="form-control" id="what" placeholder="">
-              </div>
-
-              <div class="form-group col-md-4">
-                <label for="where">¿Donde estas?</label>
-                <input name="where" type="password" class="form-control" id="where" placeholder="">
-              </div>
-
-              <div class="form-group col-md-4">
-                <label for="when">¿Cuando lo necesitas?</label>
-                <input name="when" type="password" class="form-control" id="when" placeholder="">
-              </div>
-
-            </div>
-
-            <div class="form-row">
-              
-              <div class="form-group col-md-4">
-                <label for="what">Tu nombre</label>
-                <input name="what" type="text" class="form-control" id="what" placeholder="">
-              </div>
-  
-              <div class="form-group col-md-4">
-                <label for="where">Tu teléfono</label>
-                <input name="where" type="password" class="form-control" id="where" placeholder="">
-              </div>
-  
-              <div class="form-group col-md-4">
-                <label for="when">Tu email</label>
-                <input name="when" type="password" class="form-control" id="when" placeholder="">
-              </div>
-  
-            </div>
-            -->
             <button type="submit" class="btn btn-primary btn-block mb-2">Buscar</button>
           </form>
         </div>
@@ -166,4 +127,17 @@
       color: #dc3545;
     }
   </style>
+@endsection
+
+@section('scripts')
+  <script src="https://unpkg.com/sweetalert2@7.3.2/dist/sweetalert2.all.js"></script>
+  @if (notify()->ready())
+    <script>
+        swal({
+            title: "{!! notify()->message() !!}",
+            text: "{!! notify()->option('text') !!}",
+            type: "{{ notify()->type() }}",
+        });
+    </script>
+  @endif
 @endsection
