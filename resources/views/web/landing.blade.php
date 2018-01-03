@@ -38,8 +38,8 @@
             </div>
           
             <div class="form-group {{$errors->has('when')?'is-invalid':''}}">
-              <label for="when">¿Cuando lo necesitas?</label>
-              <input name="when" type="text" value="{{old('when')}}" class="form-control" id="when" placeholder="">
+              <label for="daterange">¿Cuando lo necesitas?</label>
+              <input name="when" type="text" value="{{old('when')}}" class="form-control" id="daterange" placeholder="">
               @if($errors->has('when'))
                 <div class="invalid-feeback">
                     {{$errors->first('when')}}
@@ -90,6 +90,7 @@
 @endsection
 
 @section('styles')
+  <link href="/assets/css/daterangepicker.css" rel="stylesheet">
   <style>
     /* Stackoverflow preview fix, please ignore */
     .navbar-nav {
@@ -130,6 +131,9 @@
 @endsection
 
 @section('scripts')
+  <script type="text/javascript" src="/assets/js/moment.min.js"></script>
+  <script type="text/javascript" src="/assets/js/daterangepicker.js"></script>
+  <script type="text/javascript" src="/assets/js/date.js"></script>
   <script src="https://unpkg.com/sweetalert2@7.3.2/dist/sweetalert2.all.js"></script>
   @if (notify()->ready())
     <script>
