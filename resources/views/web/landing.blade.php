@@ -131,6 +131,27 @@
 
 @section('scripts')
   <script src="https://unpkg.com/sweetalert2@7.3.2/dist/sweetalert2.all.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key={{env('MAPS_GOOGLEAPIS_KEY')}}&libraries=places"></script>
+  <script type="text/javascript">
+
+      /*script para autocompletado de google play/ destaco que en un futuro si usan la ruta views/elements/buscador se debe eliminar este script para evitar conflictos*/
+      var input = document.getElementById('where');
+      var options = 
+      {
+      componentRestrictions: {country: "es"}// restriccion para España
+      };
+       var autocomplete = new google.maps.places.Autocomplete(input,options);
+           google.maps.event.addListener(autocomplete, 'place_changed',   function () {
+          var place = autocomplete.getPlace();
+          var lat = place.geometry.location.lat();
+          var long = place.geometry.location.lng();
+          console.log(lat + ", " + long);
+      });
+      /*fin de script*/
+
+</script>
+     
+ </script>
   @if (notify()->ready())
     <script>
         swal({

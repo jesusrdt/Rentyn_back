@@ -2,7 +2,7 @@
   <a class="navbar-brand" href="#">
     <img src="/assets/img/logo-rentyn-blanco.png" width="100" height="30" alt="">
   </a>
-
+  <!-- @include('elements.buscador') ESTE CONTIENE EL INPUT AUTOCOMPLETADO GE GOOGLE API MAP-->
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
