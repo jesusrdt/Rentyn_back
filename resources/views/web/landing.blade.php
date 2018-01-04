@@ -13,12 +13,12 @@
       <!-- Example row of columns -->
       <div class="row justify-content-md-center">
         <div class="col-md-6">
-          <h2>¡No se preocupes y cuente con nosotros!</h2>
-          <p>Alquilar a través de rentyn significa tener disponible la maquinaria que necesita justo cuando la necesita.</p>
+          <h2>{{trans('landing.msg')}}</h2>
+          <p>{{trans('landing.msg2')}}</p>
           <form method="POST" action="/send/form/landing">
             {{ csrf_field() }}
             <div class="form-group {{$errors->has('what')?'is-invalid':''}}">
-                <label for="what">¿Que necesitas?</label>
+                <label for="what">{{trans('landing.what')}}</label>
                 <input name="what" type="text" value="{{old('what')}}" class="form-control" id="what" placeholder="">
                 @if($errors->has('what'))
                 <div class="invalid-feeback">
@@ -28,7 +28,7 @@
             </div>
           
             <div class="form-group {{$errors->has('where')?'is-invalid':''}}">
-              <label for="where">¿Donde estas?</label>
+              <label for="where">{{trans('landing.where')}}</label>
               <input name="where" type="text" value="{{old('where')}}" class="form-control" id="where" placeholder="">
               @if($errors->has('where'))
                 <div class="invalid-feeback">
@@ -38,7 +38,7 @@
             </div>
           
             <div class="form-group {{$errors->has('when')?'is-invalid':''}}">
-              <label for="when">¿Cuando lo necesitas?</label>
+              <label for="when">{{trans('landing.when')}}</label>
               <input name="when" type="text" value="{{old('when')}}" class="form-control" id="when" placeholder="">
               @if($errors->has('when'))
                 <div class="invalid-feeback">
@@ -47,7 +47,7 @@
               @endif
             </div>
             <div class="form-group {{$errors->has('name')?'is-invalid':''}}">
-               <label for="name">Tu nombre</label>
+               <label for="name">{{trans('landing.name')}}</label>
               <input name="name" type="text" value="{{old('name')}}" class="form-control" id="name" placeholder="">
               @if($errors->has('name'))
                 <div class="invalid-feeback">
@@ -57,7 +57,7 @@
             </div>
         
             <div class="form-group {{$errors->has('phone')?'is-invalid':''}} ">
-              <label for="phone">Tu teléfono</label>
+              <label for="phone">{{trans('landing.phone')}}</label>
               <input name="phone" type="text" value="{{old('phone')}}" class="form-control" id="phone" placeholder="">
               @if($errors->has('phone'))
                 <div class="invalid-feeback">
@@ -67,7 +67,7 @@
             </div>
         
             <div class="form-group {{$errors->has('email')?'is-invalid':''}}">
-              <label for="email">Tu email</label>
+              <label for="email">{{trans('landing.email')}}</label>
               <input name="email" type="text" value="{{old('email')}}" class="form-control" id="email" placeholder="">
               @if($errors->has('email'))
                 <div class="invalid-feeback">
