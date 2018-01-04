@@ -18,85 +18,9 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
 
         <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
-
+       
+        <link href="{{asset('css/styles.css')}}" rel="stylesheet">
  
-        <link href="{{asset('css/daterangepicker.css')}}" rel="stylesheet">
- 
-        <style>
-/*div principal del datepicker*/
-.daterangepicker
-{
-width: auto;
-background: black;
-}
-
-/*Tabla con los días del mes*/
-.daterangepicker table
-{
-font-size: 14px;
-}
-
-/*La cabecera*/
-.daterangepicker .daterangepicker-header
-{
-
-}
-
-/*Para los días de la semana: Sa Mo ... */
-.daterangepicker th
-{
-
-}
-
-.daterangepicker td.active,
-.daterangepicker td.active:focus,
-.daterangepicker td.active:hover {
-    background-color: #ffcc66;
-}
-
-
-
-/*Para items con los días del mes por defecto */
-.daterangepicker .ui-state-default
-{
-background: red;
-}
-
-/*Para el item del día del mes seleccionado */
-.daterangepicker .state-active
-{
-background: orange;
-color: red;
-}
-
-
-
-.ranges button.applyBtn,
-.ranges button.applyBtn:hover,
-.ranges button.applyBtn:focus  {
-       background-color: #ffcc66;
-       border: 1px solid #ddd; 
-      
-}
-
-
-
-.ranges .range_inputs button.applyBtn {
-     background-color: #ffcc66;
-      border: 1px solid #ddd; 
-}
-
-.ranges .range_inputs button.applyBtn:active {
-   background-color: #ffcc66;
- border-color: #ddd;
--webkit-box-shadow: 1px 1px 1px 1px black !important;
--moz-box-shadow: 0px 0px 0px 0px black  !important;
-box-shadow: 0px 0px 0px 0px black  !important;
-}
-
-
-</style>
-
 
 
                <!-- Custom styles -->

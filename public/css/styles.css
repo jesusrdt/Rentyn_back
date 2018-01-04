@@ -363,12 +363,6 @@ p > a:visited:hover, p > a:visited:focus, p > a:hover, p > a:focus {
 }
 
 
-h1, h2, h3, h4, h5, h6 {
-	text-transform: none;
-	font-family: "Titillium Web";
-	color: #231f20;
-	letter-spacing: initial;
-}
 
 .titillium {
 	font-family: "Titillium Web";
@@ -707,34 +701,9 @@ hr {
 		color: #AB7D36;
 	}
 
-.header {
 
-	border-bottom: 0px !important;
-	background: #1a171b;
-	z-index: 1001;
-}
-	.header .navbar-header{
-		margin:0px;
-	}
 
-	.header-logo{
-		padding: 30px 30px 30px 15px;
-		/*border-right: 1px solid #373538;
-		border-left: 1px solid #373538;*/
-		max-width: 240px;
-		width: 100%;
-		height: 90px;
-		float: left;
-		text-align: center;
-		-webkit-transition: all 0.5s;
-		transition: all 0.5s;
-	}
 
-	.header-logo .navbar-brand{
-		padding:0px;
-		margin:0px !important;
-		
-	}
 
 	.header-logo a img{
 		width: 100%;
@@ -755,10 +724,6 @@ hr {
 		font-weight: 400;
 	}
 
-	.header.navbar-trans .parte-menu{
-		display: block !important;
-		/*border-top:1px solid #373538;*/
-	}
 	
 	.header .fa-angle-down {
 		display: none;
@@ -798,76 +763,7 @@ hr {
 			position: relative;
 			top: 4px;
 		}
-	#navbar {}
-
-		#navbar .link-comparador{
-		    float: right;
-		    padding: 15px 30px 15px 55px;
-		    color: white;
-		    /*border-left: 1px solid #373538;*/
-		    position: relative;
-		    font-size: 15px;
-		}
-
-			#navbar .link-comparador .comparador-icono{
-				transition-duration: 0.5s;
-				background-image: url('/temas/base/images/comparador_2_blanco.png');
-			    position: absolute;
-			    content: '';
-			    width: 25px;
-			    height: 25px;
-			    background-repeat: no-repeat;
-			    background-position: center;
-			    left: 20px;
-			    background-size: contain;
-			}
-
-			#navbar .link-comparador:hover{
-			    color: orange;
-			}
-
-			#navbar .link-comparador:hover .comparador-icono{
-			    background-image: url('/temas/base/images/comparador_2.png');
-			}
-
-		#navbar .nav.navbar-nav {
-			display: table;
-			margin: 0 auto;
-			float: none;
-		}
-			#navbar .nav.navbar-nav a, #navbar .nav.navbar-nav .open > a {
-				color: #fff;
-				font-size: 15px;
-				text-transform: capitalize;
-				letter-spacing: initial;
-			}
-			#navbar .nav.navbar-nav li > a.active,#navbar .nav.navbar-nav li > a:hover  {
-				color: #F7A82E;
-			}
-				
-				#navbar .navbar-nav .dropdown .dropdown-menu{
-					background-color: #1a171b;
-					margin-top: 0px;
-					padding: 0px;
-					border: 0px;
-				}
-
-				.navbar .navbar-nav .dropdown .dropdown-menu li a:hover{
-					border-left: 3px solid orange; 
-				}
-
-			#navbar .nav.navbar-nav .open > a {
-				background-color: transparent;
-				color: #F7A82E;
-			}
-	.navbar .navbar-nav li a:hover {
-		color: #F7A82E!important;
-	}
-
-	.navbar-toggle {
-		float:left;
-	}
-
+	
 	.menu-idiomas {
 		float:right;
 		padding: 15px 0 15px 15px;
@@ -1041,29 +937,6 @@ hr {
 			font-size: 13px;
 		}
 
-.navbar-small.header .header-logo{
-	padding: 15px 30px 15px 15px;
-	height: 80px;
-}
-
-.navbar-small.header .datos-menu {
-    float: right;
-    padding: 20px 0px 0px 40px;
-}
-		
-.navbar-small.header .parte-menu{
-	display: none;
-}
-
-.navbar-small.header .fa-angle-down {
-	display: block;
-	position: absolute;
-    bottom: 5px;
-    left: 49%;
-    color: #fff;
-    font-size: 18px;
-    cursor: pointer;
-}
 
 .pagina-home{
     margin-top: 0;
@@ -1399,9 +1272,7 @@ hr {
 	padding-top: 190px;
 }
 
-.navbar-small{
-	padding: 0px !important;
-}
+
 
 .boton-texto-comparador{
     background: #1a171b;
@@ -1874,10 +1745,7 @@ footer {
 	text-shadow: 2px 2px 2px rgba(0,0,0,0.6);
 }
 
-.slider-nav{
-	background: #F7A82E;
-	border-radius: 50%;
-}
+
 
 .clients-slider .sl-prev {
 	left: 15px;
@@ -2138,35 +2006,6 @@ h3{
 	width: 100%;
 }
 
-.slider-nav.sl-next{
-	right: -10px;
-}
-
-.slider-nav.sl-prev{
-	left: -10px;
-}
-
-.slider-nav {
-	right: 0px;
-    background: #ffffff;
-    border-radius: 0px;
-    top: 58%;
-    height: 85px;
-    width: 30px;
-}
-
-.slider-nav:hover {
-	background: #fff;
-}
-
-.slider-nav i{
-	color:#1a171b;
-    font-size: 22px;
-}
-
-.slider-nav:hover i{
-	color: orange;
-}
 
 .seccion-p{
     padding-top: 80px;
@@ -3061,24 +2900,6 @@ span.span-id{
     transition: all 0.5s;
 }
 
-/* RWD - Ernesto Miquel 07/03/2017 */
-@media screen and (max-width: 1260px) {
-	.navbar .navbar-collapse {
-		margin-top: initial;
-		padding-left: 0;
-		padding-right: 0;
-	}
-	
-	.footer-compra{
-		text-align: center; 
-	}
-	
-	.footer-compra .col-lg-6{
-		display: inline-block;
-		
-		margin-top: 30px;
-	}
-}
 
 
 @media screen and (max-width: 1366px) and (min-width: 1200px) {
@@ -3088,28 +2909,18 @@ span.span-id{
 	.header-logo {
 		padding: 30px 0;
 	}
-	.navbar-small.header .header-logo {
-		padding: 15px 0;
-	}
+	
 	.datos-menu {
 		padding: 35px 0px 0px 10px;
 	}
-	.navbar-small.header .datos-menu {
-		padding: 20px 0px 0px 20px;
-	}
+	
 	.parte-menu {
 		padding: 0;
 	}
 		.parte-menu > .container {
 			padding-left: 0;
 		}
-		#navbar .nav.navbar-nav {
-			padding-left: 0;
-			padding-right: 0;
-		}
-		#navbar .link-comparador {
-			padding: 15px 10px 15px 55px;
-		}
+	
 		.menu-idiomas .flechita {
 			margin-left: 5px;
 		}
@@ -3157,13 +2968,7 @@ span.span-id{
 		.parte-menu > .container {
 			padding-left: 0;
 		}
-		#navbar .nav.navbar-nav {
-			padding-left: 5px;
-			padding-right: 0;
-		}
-		#navbar .link-comparador {
-			padding: 15px 10px 15px 55px;
-		}
+		
 		.menu-idiomas .flechita {
 			margin-left: 5px;
 		}
@@ -3171,20 +2976,14 @@ span.span-id{
 			margin-right: 0;
 		}
 		
-	#navbar .nav.navbar-nav a, #navbar .nav.navbar-nav .open > a {
-		font-size: 14px;
-		padding: 5px;
-	}
+	
 	.menu-idiomas {
 		padding: 5px 0 5px 15px;
 	}
 	#idiomas > span {
 		display: none;
 	}
-	#navbar .link-comparador {
-		padding: 5px 10px 5px 55px;
-		font-size: 14px;
-	}
+	
 	body {
 		padding-top: 65px;
 	}
@@ -3241,28 +3040,7 @@ span.span-id{
 	
 	
 
-	.navbar-small.header .header-logo {
-		padding: 13px 0 13px 20px;
-		max-width: 110px;
-		height: 50px;
-	}
-	.navbar-small.header .parte-menu {
-		display: block;
-	}
 	
-	.header > .container {
-		padding-left: 8px;
-		padding-right: 8px;
-	}
-	.navbar-small.header .fa-angle-down {
-		display: none;
-	}
-	
-	.datos-menu, .navbar-small.header .datos-menu {
-		padding: 0;
-		margin-top: 14px;
-		margin-right: 60px;
-	}
 	.datos-menu .buscador-rentyn {
 		display: none;
 	}
@@ -3277,12 +3055,7 @@ span.span-id{
 		margin: 0;
 		border: none;
 	}
-	.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
-		background: transparent;
-	}
-	.navbar {
-		min-height: initial;
-	}
+	
 	body {
 		padding-top: 30px;
 	}
@@ -3392,18 +3165,7 @@ span.span-id{
 		padding-top: 89px;
 	}
 	
-	.navbar-small{
-		padding: 0 0 20px 0 !important;
-	}
-		
-	.datos-menu, .navbar-small.header .datos-menu {
-		padding: 0;
-		margin-top: 14px;
-		margin-right: 0px;
-		float: none;
-		display: inline-block;
-		width: 100%;
-	}
+	
 	
 	.datos-menu .login-usuario, .datos-menu .carrito {
 		margin-left: 0;
