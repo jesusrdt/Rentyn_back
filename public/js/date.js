@@ -5,8 +5,9 @@ $(function () {
     $('#daterange').daterangepicker({
         
         locale: {
-          format: 'DD-MM-YYYY'
-        },
+          format: 'DD-MM-YYYY',
+          
+        }
     });
 
     //date time picker

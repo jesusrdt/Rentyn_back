@@ -1,11 +1,10 @@
 /* 
-    Created on : Jul 23, 2017, 6:30:10 PM
-    Author     : Atta-Ur-Rehman Shah (http://attacomsian.com)
+
 */
 .daterangepicker .btn-primary, .daterangepicker .btn-primary:hover, .daterangepicker .btn-primary:focus,
 .daterangepicker .btn-primary.disabled, .daterangepicker .btn-primary:disabled{
-    background-color: #6200ea;
-    border-color: #6200ea;
+    background-color: #ffcc00;
+    border-color: #ffcc00;
 }
 .input-daterange input {
     text-align: center
@@ -144,7 +143,7 @@
 .daterangepicker td.active,
 .daterangepicker td.active:focus,
 .daterangepicker td.active:hover {
-    background-color: #6200ea;
+    background-color: #ffcc66;
     color: #fff;
     border-radius: 3px;
 }
@@ -153,6 +152,7 @@
 .daterangepicker .table-condensed tr>th {
     padding: 9px;
     line-height: 1
+    background-color: #ffcc66;
 }
 
 .daterangepicker .table-condensed thead tr:last-child th {
@@ -222,7 +222,6 @@
 .ranges {
     background-color: #fff;
     position: relative;
-    border: 1px solid #ddd;
     border-radius: 3px;
     width: 200px;
     margin-top: 7px;
@@ -266,7 +265,7 @@
 
 .ranges ul li.active {
     color: #fff;
-    background-color: #6200ea
+    background-color: #ffcc66
 }
 
 .ranges .daterangepicker-inputs {
