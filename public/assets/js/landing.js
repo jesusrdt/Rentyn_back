@@ -72,4 +72,29 @@
     }
   });
 
+  $('#enviar').click( function(e) {
+    var _token = $('[name="_token"]').val();
+    var formData = 
+    {
+    name  : $('#txtName').val(),
+    telef : $('#txtTlf').val(),
+    email : $('#txtEmail').val() 
+    };
+    /* var data = 'name=' +name+ '&telef='+telef+ '&email=' +email+ '&_token='+_token; */
+    $.ajax({
+    url: "contact",
+    type: 'post',
+    data: formData,
+    cache: false,
+    success: function(response) {
+      $('#done').html('<h3>'+'Enviado!!!'+'</h3>').fadeIn('slow');
+    },
+    error: function(jqXHR, textStatus, errorThrown) {
+        $('#done').html('<h3>'+errorThrown+textStatus+'</h3>').fadeIn('slow');
+        console.log(textStatus,errorThrown);
+    }
+    });
+    return false;
+  });
+
 })(jQuery); // End of use strict
