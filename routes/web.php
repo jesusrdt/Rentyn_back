@@ -15,6 +15,18 @@ use App\Mail\LandingMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
+
+Route::group(
+[
+    'prefix' => LaravelLocalization::setLocale(),
+    'middleware' => [ 'localeSessionRedirect', 'localizationRedirect','web' ]
+],
+function()
+{
+
+session(['lang' => LaravelLocalization::setLocale()]);
+
+
 Route::get('/', function () {
     return view('web.landing');
 });
@@ -48,3 +60,4 @@ Route::post('/send/form/landing', function(Request $request) {
 /**** TAGS  ******/
 Route::resource('/tags', 'TagController');
 
+});
