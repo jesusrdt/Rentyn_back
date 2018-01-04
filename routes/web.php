@@ -25,7 +25,8 @@ Route::group(
 function()
 {
 
-
+session(['lang' => LaravelLocalization::setLocale()]);
+	
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -33,10 +34,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/admin/reference-products','ProductController@index');
     
 });
-
-Route::get('lang/{lang}', function($lang) {
-  \Session::put('lang', $lang);
-  return \Redirect::back();
-})->middleware('web')->name('change_lang');
-
 
