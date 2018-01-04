@@ -74,7 +74,13 @@
                 <span class="custom-file-control"></span>
             </label>
             </div>
-          </div> -->
+          </div> 
+
+  <div class="col-md-2">
+              <a href="#" onclick="delete_file()"><i" title="Borrar Archivo" class="fa fa-trash-o fa-2x"></i></a>
+              </div>
+          </div>
+        -->
 
 
             <button type="submit" class="btn btn-primary btn-block mb-2">Registrar</button>
