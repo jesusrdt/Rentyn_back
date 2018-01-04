@@ -20,7 +20,7 @@ Route::get('/', function () {
 Route::group(
 [
 	'prefix' => LaravelLocalization::setLocale(),
-	'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
+	'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath',,'web' ]
 ],
 function()
 {
