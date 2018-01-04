@@ -11,20 +11,39 @@
 |
 */
 
+use App\Mail\LandingMail;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('web.landing');
 });
 
-Auth::routes();
+Route::post('/send/form/landing', function(Request $request) {
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('contact', 'ContactController');
+    $validator = Validator::make($request->all(), [
+        'what'  => 'required',
+        'where' => 'required',
+        'when'  => 'required',
+        'name'  => 'required',
+        'phone' => 'required|max:9',
+        'email' => 'required|email',
+    ]);
 
-Route::get('lang/{lang}', function($lang) {
-  \Session::put('lang', $lang);
-  return \Redirect::back();
-})->middleware('web')->name('change_lang');
+    if ($validator->fails()) {
+        return redirect('/')
+                    ->withErrors($validator)
+                    ->withInput();
+    }
 
+    Mail::to('info@rentyn.com')->send(new LandingMail($request->all()));
+        
+    notify()->flash('Solicitud enviada', 'success', [
+        'text' => 'En pocos minutos, sera contactado para darle solución para su solicitud',
+    ]);
+
+    return redirect('/');
+});
 
 /**** TAGS  ******/
 Route::resource('/tags', 'TagController');
