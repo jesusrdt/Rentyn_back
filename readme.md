@@ -2,7 +2,7 @@
 
 <ol>
 	<li> Comando: cd /ruta_destino_proyecto</li>
-	<li> Comando: git clone https://github.com/roberthx2/Rentyn_back.git</li>
+	<li> Comando: git clone https://github.com/rentyn/Rentyn_back.git</li>
 	<li> Comando: cd /carpeta_proyecto/ </li>
 	<li> Comando: composer install </li>
 	<li> Comando: npm install </li>
