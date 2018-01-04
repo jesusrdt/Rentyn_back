@@ -14,20 +14,15 @@ class ProductController extends Controller
     
     public function index(Request $request)
     {
-        //
-
         $products =Product::Busqueda($request->get('busq'))
         ->paginate(10);
- 
-        return View('product.reference-products',compact('products'));
-        
-
+        return View('products.reference-products',compact('products'));
     }
 
     
     public function create()
     {
-        
+        return View('products.reference-product-form');
     }
 
     

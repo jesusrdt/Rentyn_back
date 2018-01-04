@@ -46,6 +46,14 @@ Route::post('/send/form/landing', function(Request $request) {
 });
 
 
+Route::get('/products/index','ProductController@index');
+
+Route::get('/products/create','ProductController@create');
+
+
+
+
+
 /******************************* BACKEND *************************************/
 
 //Auth::routes();
