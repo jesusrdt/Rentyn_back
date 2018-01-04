@@ -12,6 +12,16 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+	
+	<script src="{{ asset('js/jquery.min.js') }}"></script>
+	
+	<link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" />
+	<script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
+	
+	<link href="{{ asset('select2/css/select2.min.css') }}" rel="stylesheet" />
+	<script src="{{ asset('select2/js/select2.full.min.js') }}"></script>
+	<script src="{{ asset('select2/js/i18n/es.js') }}"></script>
+	
 </head>
 <body>
 <div id="app">
@@ -57,11 +67,14 @@
 
         </div>
     </nav>
-
+	
     @yield('content')
+	
+	<!-- @yield('scripts') -->
+	
 </div>
 
 <!-- Scripts -->
-<script src="{{ asset('js/app.js') }}"></script>
+<!-- <script src="{{ asset('js/app.js') }}"></script> -->
 </body>
 </html>

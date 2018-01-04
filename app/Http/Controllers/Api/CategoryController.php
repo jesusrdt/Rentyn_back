@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
 use App\Category;
@@ -12,7 +12,7 @@ class CategoryController extends Controller
     {
         $categories = Category::latest()->paginate(10);
 		
-        return view('categories.index', compact('categories'))->with('i', (request()->input('page', 1) - 1) * 5);
+        return response()->json($categories);
     }
 
     /**
@@ -22,10 +22,9 @@ class CategoryController extends Controller
      */
     public function create()
     {
-		$subCategories = Category::pluck('name', 'id');
-		$selectSubCategory = [];
+        $subCategories = Category::pluck('name', 'id');
 		
-        return view('categories.create', compact('subCategories', 'selectSubCategory'));
+		return response()->json(['sub_category' => $subCategories]);
     }
 
     /**
@@ -60,7 +59,7 @@ class CategoryController extends Controller
 			$category->save();
 		}
         
-		return redirect()->route('categories.index')->with('success', 'Created successfully');
+		return response()->json(['success' => true, 'message' => 'Created successfully']);
     }
 
     /**
@@ -69,9 +68,19 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Category $category)
+    public function show($id)
     {
-        return view('categories.show', compact('category'));
+		$category = Category::findOrFail($id);
+		
+		$selectSubCategory = [];
+		
+		$subCategory = SubCategory::with('category')->where('category_id', '=', $id)->get();
+		
+		foreach ($subCategory as $sub) {
+			$selectSubCategory[] = $sub->category->id;
+		}
+		
+        return response()->json(['category' => $category, 'sub_category' => $selectSubCategory]);
     }
 
     /**
@@ -80,19 +89,19 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category $category)
+    public function edit($id)
     {
-		$subCategories = Category::pluck('name', 'id')->toArray();
+        $category = Category::findOrFail($id);
 		
 		$selectSubCategory = [];
 		
-		$subCategory = SubCategory::with('category')->where('category_id', '=', $category->id)->get();
+		$subCategory = SubCategory::with('category')->where('category_id', '=', $id)->get();
 		
 		foreach ($subCategory as $sub) {
 			$selectSubCategory[] = $sub->category->id;
 		}
 		
-        return view('categories.edit', compact('category', 'subCategories', 'selectSubCategory'));
+        return response()->json(['category' => $category, 'sub_category' => $selectSubCategory]);
     }
 
     /**
@@ -131,7 +140,7 @@ class CategoryController extends Controller
 			$category->save();
 		}
 		
-        return redirect()->route('categories.index')->with('success', 'Updated successfully');
+        return response()->json(['success' => true, 'message' => 'Updated successfully']);
     }
 
     /**
@@ -144,6 +153,6 @@ class CategoryController extends Controller
     {
         Category::destroy($id);
 		
-        return redirect()->route('categories.index')->with('success', 'Deleted successfully');
+        return response()->json(['success' => true, 'message' => 'Deleted successfully']);
     }
 }
