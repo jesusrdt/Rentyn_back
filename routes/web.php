@@ -45,3 +45,24 @@ Route::post('/send/form/landing', function(Request $request) {
     return redirect('/');
 });
 
+
+/******************************* BACKEND *************************************/
+
+//Auth::routes();
+
+/*** CAMBIAR LENGUAJE DE LA APP **/
+Route::get('lang/', function($lang) {
+  \Session::put('lang', $lang);
+  return \Redirect::back();
+})->middleware('web')->name('change_lang');
+
+Route::get('/back', function () {
+    return view('back.index');
+});
+
+/**** TAGS  ******/
+Route::prefix('back')->group(function () {
+    Route::resource('/tags', 'TagController');
+});
+
+/******************************* FIN BACKEND *************************************/

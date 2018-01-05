@@ -16,6 +16,7 @@ window.Vue = require('vue');
  */
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.component('vue-table-2', require('./components/VueTable2.vue'));
 
 const app = new Vue({
     el: '#app'
