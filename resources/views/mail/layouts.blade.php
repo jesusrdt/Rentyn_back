@@ -176,18 +176,15 @@
 		<div class="header">
 		<img src="{{asset('assets/images/img_principal.jpg')}}" class="header-back-img" alt="">
 		<img src="{{asset('assets/images/logo.png')}}" class="logo-header" alt="">
-			<div class="form-layouts">
-			<div class="form-group">
-			</div>
+		<div class="form-layouts">
 			{!! Form::open(['url' => '/']) !!}
 			{{ Form::text('que', null,(['class' => 'form-input overborder', 'placeholder'=> '¿Qué?'])) }}
 			{{ Form::text('donde', null,(['class' => 'form-input overborder', 'placeholder'=> '¿Dónde?'])) }}
 			{{ Form::text('telefono', null,(['class' => 'form-input overborder', 'placeholder'=> 'Nombre'])) }}
 			{{ Form::text('correo', null,(['class' => 'form-input overborder', 'placeholder'=> 'Teléfono'])) }}
 			{!! Form::close() !!}
-			</div>
-			</div>
-			
+		</div>
+		</div>
 	</div>
 </div>
 </div>

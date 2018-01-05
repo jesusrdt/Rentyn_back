@@ -17,9 +17,11 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+/*Route::get('/home', 'HomeController@landing')->name('home');*/
+Route::get('/', 'HomeController@index');
+Route::get('mail', 'HomeController@mail')->name('mail');
+Route::get('contacto', 'HomeController@contacto');
 Route::resource('contact', 'ContactController');
-
 Route::get('lang/{lang}', function($lang) {
   \Session::put('lang', $lang);
   return \Redirect::back();
